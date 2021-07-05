@@ -2,12 +2,16 @@ package com.example.madpropertypal.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
 import com.example.madpropertypal.PropertyModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
 
@@ -85,6 +89,52 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             db.close();
             return true;
         }
+    }
+
+
+
+
+
+    public List<PropertyModel> fetchHouses(){
+
+        List<PropertyModel> propertyModelList = new ArrayList<>();
+
+        String fetchQuery = "SELECT * FROM " + HOUSES_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(fetchQuery,null);
+
+        if (cursor.moveToFirst()){
+            do {
+
+                int id = cursor.getInt(0);
+                String propertyName = cursor.getString(1);
+                String type = cursor.getString(2);
+                String lease = cursor.getString(3);
+                String location = cursor.getString(4);
+                String amenities = cursor.getString(5);
+                String description = cursor.getString(6);
+                int bedrooms = cursor.getInt(7);
+                int bathrooms = cursor.getInt(8);
+                int size = cursor.getInt(9);
+                int price = cursor.getInt(10);
+
+
+
+                PropertyModel model = new PropertyModel(id,propertyName,type,lease,location,amenities,
+                        description,bedrooms,bathrooms,size,price);
+                propertyModelList.add(model);
+
+            }while (cursor.moveToNext());
+
+        }else{
+
+
+        }
+
+
+        cursor.close();
+        db.close();
+        return propertyModelList;
     }
 
 
