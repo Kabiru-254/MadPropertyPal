@@ -1,44 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="5dp"
-    android:background="@color/white"
+    android:background="@color/primaryDark"
     tools:context=".PropertyDetails">
+
+
+    <LinearLayout
+        android:background="@color/primaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="casual"
+        android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:text="Enter Property Details"
-        android:textColor="@color/black"
+        android:text="@string/enter_your_property_details"
+        android:textColor="@color/white"
         android:textSize="22sp"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="5dp"
         android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:background="@drawable/property_bg"
         >
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:id="@+id/propertyName"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Property Name"
+            android:hint="@string/property_name"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
 
                 />
 
@@ -48,8 +66,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/type"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Apartment, House, Bungalow, etc"
+            android:hint="@string/property_type_eg_apartment_house_bungalow"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -64,8 +84,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/leaseType"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Lease type (Freehold, Leasehold, etc)"
+            android:hint="@string/lease_type_freehold_leasehold_etc"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -80,8 +102,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/location"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Location"
+            android:hint="@string/location_of_the_property"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -96,8 +120,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bedrooms"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Number of Bedrooms"
+            android:hint="@string/number_of_bedrooms"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -113,8 +139,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bathrooms"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Number of Bathrooms"
+            android:hint="@string/number_of_bathrooms"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -129,13 +157,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/size"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Size"
+            android:hint="@string/size_squared_meter"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="number"
 
                 />
 
@@ -145,8 +176,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/askingPrice"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Asking Price"
+            android:hint="@string/asking_price"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -161,8 +194,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/localAmenities"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Local Amenities"
+            android:hint="@string/local_amenities"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -177,27 +212,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/description"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:minHeight="50dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Description"
+            android:hint="@string/description"
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:inputType="text"
+                android:minLines="4"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
+            android:id="@+id/submitBT"
+            android:layout_width="167dp"
             android:layout_height="wrap_content"
-            android:text="Submit"
             android:layout_gravity="center_horizontal"
-            android:background="@color/primaryDark"
-            android:layout_margin="5dp"
-            />
+            android:layout_marginTop="30dp"
+            android:elevation="3dp"
+            android:background="@drawable/round_btn"
+            android:text="@string/submit" />
 
     </LinearLayout>
-
 </LinearLayout>
+
+</ScrollView>

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MadPropertyPal</string>
+    <string name="property_name">Property Name</string>
+    <string name="property_type_eg_apartment_house_bungalow">Property Type eg Apartment, House, Bungalow</string>
+    <string name="lease_type_freehold_leasehold_etc">Lease type (Freehold, Leasehold, etc)</string>
+    <string name="location_of_the_property">Location of the Property</string>
+    <string name="number_of_bedrooms">Number of Bedrooms</string>
+    <string name="number_of_bathrooms">Number of Bathrooms</string>
+    <string name="size_squared_meter">Size(squared meter)</string>
+    <string name="asking_price">Asking Price</string>
+    <string name="local_amenities">Local Amenities(separate with a comma)</string>
+    <string name="description">Description</string>
+    <string name="submit">Submit</string>
+    <string name="enter_your_property_details">Enter Your Property Details</string>
 </resources>
