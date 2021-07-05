@@ -5,7 +5,7 @@ public class PropertyModel {
     //This class defines the basic structure of a property item and the details to be stored on the db
 
     String propertyName, propertyType, leaseType, location, localAmenities, description ;
-    int bedroomNumber, bathroomNumber, size, askingPrice;
+    int bedroomNumber, bathroomNumber, size, askingPrice, id;
 
 
 
@@ -13,9 +13,7 @@ public class PropertyModel {
     public  PropertyModel(){}
 
 
-
-    //constructor
-    public PropertyModel(String propertyName, String propertyType,
+    public PropertyModel( int id, String propertyName, String propertyType,
                          String leaseType, String location, String localAmenities,
                          String description, int bedroomNumber, int bathroomNumber,
                          int size, int askingPrice) {
@@ -29,10 +27,17 @@ public class PropertyModel {
         this.bathroomNumber = bathroomNumber;
         this.size = size;
         this.askingPrice = askingPrice;
+        this.id = id;
     }
 
+    public int getId() {
 
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     //getter and setter methods;
     public String getPropertyName() {

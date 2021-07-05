@@ -6,11 +6,29 @@
     android:layout_height="wrap_content">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="50dp">
+
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical">
+
+
+  <ProgressBar
+      android:id="@+id/uploadProgress"
+      android:layout_width="215dp"
+      android:layout_height="190dp"
+      android:layout_gravity="center"
+      android:visibility="gone"/>
+
+  <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:visibility="visible"
+     android:paddingBottom="50dp"
+      android:id="@+id/linearLayout">
+
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -30,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/property_type"/>
+        android:text="@string/property__type"/>
 
     <TextView
         android:layout_marginStart="20dp"
@@ -38,7 +56,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/property_type"
+        android:text="@string/property__type"
         android:textSize="20sp"
         android:id="@+id/typeTV"/>
 
@@ -54,7 +72,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/property_type"
+        android:text="@string/property__type"
         android:textSize="20sp"
         android:id="@+id/leaseType"/>
 
@@ -73,7 +91,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Location"
+        android:text="@string/location"
         android:textSize="20sp"
         android:id="@+id/locationtv"/>
 
@@ -214,5 +232,8 @@
             android:layout_gravity="end"/>
 
     </LinearLayout>
+
+
+ </LinearLayout>
 
 </ScrollView>

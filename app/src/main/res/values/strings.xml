@@ -16,10 +16,11 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="property_type">Property Type</string>
+    <string name="property__type">Property Type</string>
     <string name="property_lease_type">Property Lease Type</string>
     <string name="location">Location</string>
     <string name="local_amenities_">Local Amenities</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+
 </resources>

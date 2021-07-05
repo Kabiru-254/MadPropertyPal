@@ -1,6 +1,7 @@
 package com.example.madpropertypal.ui.uploadHouse;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +23,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.madpropertypal.HomeActivity;
+import com.example.madpropertypal.PropertyModel;
 import com.example.madpropertypal.R;
+import com.example.madpropertypal.sqlite.SQLiteHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -32,6 +38,11 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     private TextInputLayout propertyNameTET, propertyTypeTET,
             leaseTypeTET, locationTET, noOfBedroomsTET, noOfBathroomsTET,
             sizeTET, priceTET, amenitiesTET, descriptionTET;
+
+
+
+
+
 
 
 
@@ -60,6 +71,10 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
 
+
+
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.activity_property_details, container, false);
@@ -80,6 +95,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
 
+
         checkRequiredFieldsForEmptyValues();
         propertyNameTET.getEditText().addTextChangedListener(textWatcher);
         propertyTypeTET.getEditText().addTextChangedListener(textWatcher);
@@ -92,9 +108,16 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         amenitiesTET.getEditText().addTextChangedListener(textWatcher);
         descriptionTET.getEditText().addTextChangedListener(textWatcher);
 
+
         button.setOnClickListener(this::onClick);
         return root;
     }
+
+
+
+
+
+
 
 
 
@@ -117,6 +140,8 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         noOfBathrooms = noOfBathroomsTET.getEditText().getText().toString();
         size = sizeTET.getEditText().getText().toString();
         price = priceTET.getEditText().getText().toString();
+        description = descriptionTET.getEditText().getText().toString();
+        amenities = amenitiesTET.getEditText().getText().toString();
 
 
 
@@ -125,14 +150,28 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
                 noOfBedrooms.isEmpty() || noOfBathrooms.isEmpty()
                 || size.isEmpty() || price.isEmpty()) {
 
+
             button.setEnabled(false);
 
         }else{
+
+
+            if (description.isEmpty()){
+                description = " ";
+            }
+
+            if (amenities.isEmpty()){
+                amenities = " ";
+            }
+
 
             button.setEnabled(true);
         }
 
     }
+
+
+
 
 
 
@@ -155,12 +194,56 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getContext(), "Make your changes then submit again", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
 
+
         } else if (v == confirmBT) {
 
+
+            linearLayout.setVisibility(View.GONE);
+            progressBar.setVisibility(View.VISIBLE);
             Toast.makeText(getContext(), "Confirmed", Toast.LENGTH_SHORT).show();
+            uploadHouse();
 
         }
     }
+
+
+
+
+
+
+    //method to push house details to sqlite
+
+    private PropertyModel propertyModel;
+    private void uploadHouse() {
+
+        int bedrooms = Integer.parseInt(noOfBedrooms);
+        int bathrooms = Integer.parseInt(noOfBathrooms);
+        int propertySize = Integer.parseInt(size);
+        int askingPrice = Integer.parseInt(price);
+
+        SQLiteHelper sqLiteHelpar = new SQLiteHelper(getContext(), "HOUSES_AVAILABLE");
+
+        propertyModel = new PropertyModel(-1, propertyName, propertyType,leaseType,
+                location, amenities, description, bedrooms, bathrooms,propertySize, askingPrice );
+        boolean addedHouse = sqLiteHelpar.addHouses(propertyModel);
+
+
+        if (addedHouse) {
+
+            dialog.dismiss();
+            startActivity(new Intent(getContext(), HomeActivity.class));
+            Toast.makeText(getContext(), "Success " + addedHouse, Toast.LENGTH_SHORT).show();
+
+        }else{
+
+            dialog.dismiss();
+            Toast.makeText(getContext(), "Something Went Wrong. Try Again", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
+
 
 
 
@@ -176,6 +259,8 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     TextView nameTV, typeTV, leaseTypeTV, locationTV, localAmenitiesTV,
             descriptionTV, bathroomNumber, bedroomNumber,sizeTV;
     Button confirmBT, cancelBT;
+    private ProgressBar progressBar;
+    LinearLayout linearLayout;
     public void openDialog(int layoutID){
 
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
@@ -192,16 +277,36 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         //selection buttons onclick
         nameTV =  inflator.findViewById(R.id.nameTV);
         typeTV =  inflator.findViewById(R.id.nameTV);
+        leaseTypeTV =  inflator.findViewById(R.id.leaseType);
+        locationTV =  inflator.findViewById(R.id.locationtv);
+        localAmenitiesTV =  inflator.findViewById(R.id.localAmenitiesTV);
+        descriptionTV =  inflator.findViewById(R.id.descriptiontv);
+        bathroomNumber =  inflator.findViewById(R.id.bathroomNumber);
+        bedroomNumber =  inflator.findViewById(R.id.bedroomNumber);
+        sizeTV =  inflator.findViewById(R.id.size);
 
-        
+
+
+        //set details into the confirm dialog
         nameTV.setText(propertyName);
         typeTV.setText(propertyType);
+        leaseTypeTV.setText(leaseType);
+        locationTV.setText(location);
+        localAmenitiesTV.setText(amenities);
+        descriptionTV.setText(description);
+        bathroomNumber.setText(noOfBathrooms);
+        bedroomNumber.setText(noOfBedrooms);
+        sizeTV.setText(size);
 
 
         cancelBT = inflator.findViewById(R.id.cancelBT);
         cancelBT.setOnClickListener(this::onClick);
         confirmBT = inflator.findViewById(R.id.confirmBT);
         confirmBT.setOnClickListener(this::onClick);
+
+        progressBar = inflator.findViewById(R.id.uploadProgress);
+        linearLayout = inflator.findViewById(R.id.linearLayout);
+
 
         dialog.show();
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
