@@ -13,7 +13,6 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"/>
 
-        <activity android:name=".PropertyDetails" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,7 @@ public class PropertyModel {
     //This class defines the basic structure of a property item and the details to be stored on the db
 
     String propertyName, propertyType, leaseType, location, localAmenities, description ;
-    int bedroomNumber, bathroomNumber, size,askingPrice;
+    int bedroomNumber, bathroomNumber, size, askingPrice;
 
 
 
