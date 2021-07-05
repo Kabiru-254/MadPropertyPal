@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primaryDark"
+    tools:context=".selectedPropertyDetails">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Details of Selected Property"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/property_bg"
+        >
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:background="@color/primaryLight"
+        android:padding="10dp"
+        android:fontFamily="@font/antic"
+        android:textSize="22sp"
+        android:hint="Property Name"
+        android:textColor="@color/black"
+        />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Property Type"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Lease Type"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/antic"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:textSize="22sp"
+            android:hint="Location of the Property"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Number of Bedrooms"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Number of Bathrooms"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Size in Square Metres"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Asking price"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Local Amenities"
+            android:textColor="@color/black"
+            />
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@color/primaryLight"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="Description"
+            android:textColor="@color/black"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submitBT"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:elevation="3dp"
+            android:background="@drawable/round_btn"
+            android:text="I'm Interested" />
+
+    </LinearLayout>
+
+</LinearLayout>
