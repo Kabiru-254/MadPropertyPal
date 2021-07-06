@@ -3,46 +3,47 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    android:background="@color/primaryDark"
-    >
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/primaryLight"
+    android:paddingBottom="20dp">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/recyclerNameTV"
+    android:hint="@string/property_name"
+    android:textSize="20sp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:textColor="@color/black"
+    android:layout_margin="10dp"
+    />
 
     <TextView
+        android:id="@+id/recyclerpriceTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/asking_price"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/recyclerLocationTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="casual"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:text="List of properties and houses"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/property_bg"
-        android:orientation="vertical"
+        android:layout_gravity="end"
+        android:layout_marginTop="-55dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/location"
         android:padding="10dp"
-        android:layout_margin="5dp"
-        >
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/houses_recycler"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="#FFFFFF"
-            />
-
-    </LinearLayout>
-
-
-
+        android:textSize="20sp" />
 
 
 </LinearLayout>
