@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/primaryDark"
+    android:padding="5dp"
+    >
 
 
 
@@ -11,7 +14,11 @@
  <LinearLayout
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     android:orientation="vertical">
+     android:orientation="vertical"
+     android:layout_margin="5dp"
+     android:padding="10dp"
+     android:background="@drawable/property_bg"
+     >
 
 
   <ProgressBar
@@ -26,13 +33,24 @@
      android:layout_height="wrap_content"
      android:orientation="vertical"
      android:visibility="visible"
-     android:paddingBottom="50dp"
+     android:paddingStart="10dp"
+      android:paddingRight="10dp"
+      android:paddingLeft="10dp"
+      android:paddingBottom="50dp"
+      android:layout_margin="7dp"
       android:id="@+id/linearLayout">
 
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="@string/property_name"/>
+       android:text="@string/property_name"
+       android:fontFamily="@font/antic"
+       android:textColor="@color/black"
+       android:textSize="18sp"
+       android:textStyle="italic"
+       android:padding="5dp"
+       android:layout_marginRight="3dp"
+       />
 
     <TextView
         android:layout_marginStart="20dp"
@@ -40,7 +58,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/property_name"
+        android:hint="@string/property_name"
         android:textSize="20sp"
         android:id="@+id/nameTV"/>
 
@@ -48,6 +66,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/property__type"/>
 
     <TextView
@@ -56,7 +80,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/property__type"
+        android:hint="@string/property__type"
         android:textSize="20sp"
         android:id="@+id/typeTV"/>
 
@@ -64,6 +88,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/property_lease_type"/>
 
     <TextView
@@ -72,7 +102,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/property__type"
+        android:hint="@string/property__type"
         android:textSize="20sp"
         android:id="@+id/leaseType"/>
 
@@ -83,6 +113,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/location"/>
 
     <TextView
@@ -91,7 +127,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/location"
+        android:hint="@string/location"
         android:textSize="20sp"
         android:id="@+id/locationtv"/>
 
@@ -105,6 +141,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/local_amenities_"/>
 
     <TextView
@@ -113,7 +155,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/local_amenities_"
+        android:hint="@string/local_amenities_"
         android:textSize="20sp"
         android:id="@+id/localAmenitiesTV"/>
 
@@ -124,6 +166,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/description"/>
 
     <TextView
@@ -132,7 +180,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/description"
+        android:hint="@string/description"
         android:textSize="20sp"
         android:id="@+id/descriptiontv"/>
 
@@ -141,6 +189,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/number_of_bathrooms"/>
 
     <TextView
@@ -149,7 +203,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/number_of_bathrooms"
+        android:hint="@string/number_of_bathrooms"
         android:textSize="20sp"
         android:id="@+id/bathroomNumber"/>
 
@@ -158,6 +212,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/number_of_bedrooms"/>
 
     <TextView
@@ -166,7 +226,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/number_of_bedrooms"
+        android:hint="@string/number_of_bedrooms"
         android:textSize="20sp"
         android:id="@+id/bedroomNumber"/>
 
@@ -177,6 +237,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/size_squared_meter"/>
 
     <TextView
@@ -185,7 +251,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/size_squared_meter"
+        android:hint="@string/size_squared_meter"
         android:textSize="20sp"
         android:id="@+id/size"/>
 
@@ -195,6 +261,12 @@
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:padding="5dp"
+        android:layout_marginRight="3dp"
         android:text="@string/asking_price"/>
 
     <TextView
@@ -203,33 +275,37 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/asking_price"
+        android:hint="@string/asking_price"
         android:textSize="20sp"
         android:id="@+id/askingPrice"
         />
 
 
-        <Button
-            android:id="@+id/confirmBT"
-            android:layout_width="145dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_btn"
-            android:text="@string/confirm" />
+   <Button
+       android:id="@+id/confirmBT"
+       android:layout_width="115dp"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="10dp"
+       android:layout_marginTop="20dp"
+       android:padding="10dp"
+       android:layout_marginRight="5dp"
+       android:background="@drawable/round_btn"
+       android:text="@string/confirm" />
 
 
 
-        <Button
-            android:id="@+id/cancelBT"
-            android:layout_width="145dp"
-            android:layout_marginTop="-50dp"
-            android:layout_marginEnd="30dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/round_btn"
-            android:text="@string/cancel"
-            android:layout_gravity="end"/>
+   <Button
+       android:id="@+id/cancelBT"
+       android:layout_width="115dp"
+       android:layout_marginTop="-50dp"
+       android:layout_marginEnd="10dp"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="10dp"
+       android:padding="10dp"
+       android:layout_marginLeft="5dp"
+       android:background="@drawable/round_btn"
+       android:text="@string/cancel"
+       android:layout_gravity="end"/>
 
     </LinearLayout>
 

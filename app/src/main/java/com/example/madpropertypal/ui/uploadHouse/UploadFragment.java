@@ -30,7 +30,7 @@ import com.example.madpropertypal.sqlite.SQLiteHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class UploadFragment extends Fragment implements View.OnClickListener {
+public class UploadFragment extends Fragment {
 
 
 
@@ -38,13 +38,6 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     private TextInputLayout propertyNameTET, propertyTypeTET,
             leaseTypeTET, locationTET, noOfBedroomsTET, noOfBathroomsTET,
             sizeTET, priceTET, amenitiesTET, descriptionTET;
-
-
-
-
-
-
-
 
 
 
@@ -96,7 +89,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
 
-        checkRequiredFieldsForEmptyValues();
+
         propertyNameTET.getEditText().addTextChangedListener(textWatcher);
         propertyTypeTET.getEditText().addTextChangedListener(textWatcher);
         leaseTypeTET.getEditText().addTextChangedListener(textWatcher);
@@ -109,7 +102,17 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         descriptionTET.getEditText().addTextChangedListener(textWatcher);
 
 
-        button.setOnClickListener(this::onClick);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                checkRequiredFieldsForEmptyValues();
+
+            }
+        });
+
+
+
         return root;
     }
 
@@ -144,15 +147,53 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         amenities = amenitiesTET.getEditText().getText().toString();
 
 
-
-        if (propertyName.isEmpty() || propertyType.isEmpty() ||
-                leaseType.isEmpty() || location.isEmpty() ||
-                noOfBedrooms.isEmpty() || noOfBathrooms.isEmpty()
-                || size.isEmpty() || price.isEmpty()) {
-
-
+        if (propertyName.isEmpty())
+        {
             button.setEnabled(false);
-
+            propertyNameTET.requestFocus();
+            propertyNameTET.setError("Required!");
+        }
+        else if (propertyType.isEmpty())
+        {
+            button.setEnabled(false);
+            propertyTypeTET.requestFocus();
+            propertyTypeTET.setError("Required!");
+        }
+        else if (leaseType.isEmpty())
+        {
+            button.setEnabled(false);
+            leaseTypeTET.requestFocus();
+            leaseTypeTET.setError("Required!");
+        }
+        else if (location.isEmpty())
+        {
+            button.setEnabled(false);
+            locationTET.requestFocus();
+            locationTET.setError("Required!");
+        }
+        else if (noOfBedrooms.isEmpty())
+        {
+            button.setEnabled(false);
+            noOfBedroomsTET.requestFocus();
+            noOfBedroomsTET.setError("Required!");
+        }
+        else if (noOfBathrooms.isEmpty())
+        {
+            button.setEnabled(false);
+            noOfBathroomsTET.requestFocus();
+            noOfBathroomsTET.setError("Required!");
+        }
+        else if (size.isEmpty())
+        {
+            button.setEnabled(false);
+            sizeTET.requestFocus();
+            sizeTET.setError("Required!");
+        }
+        else if (price.isEmpty())
+        {
+            button.setEnabled(false);
+            priceTET.requestFocus();
+            priceTET.setError("Required!");
         }else{
 
 
@@ -166,7 +207,10 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
             button.setEnabled(true);
+            Toast.makeText(getContext(), "button clicked", Toast.LENGTH_SHORT).show();
+            openDialog(R.layout.dialog_layout);
         }
+
 
     }
 
@@ -179,7 +223,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
     //what happens when button is clicked
-    @Override
+   /* @Override
     public void onClick(View v) {
 
 
@@ -204,7 +248,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
             uploadHouse();
 
         }
-    }
+    }*/
 
 
 
@@ -300,9 +344,25 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
         cancelBT = inflator.findViewById(R.id.cancelBT);
-        cancelBT.setOnClickListener(this::onClick);
+        cancelBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Make your changes then submit again", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+
+            }
+        });
         confirmBT = inflator.findViewById(R.id.confirmBT);
-        confirmBT.setOnClickListener(this::onClick);
+        confirmBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linearLayout.setVisibility(View.GONE);
+                progressBar.setVisibility(View.VISIBLE);
+                Toast.makeText(getContext(), "Confirmed", Toast.LENGTH_SHORT).show();
+                uploadHouse();
+
+            }
+        });
 
         progressBar = inflator.findViewById(R.id.uploadProgress);
         linearLayout = inflator.findViewById(R.id.linearLayout);
