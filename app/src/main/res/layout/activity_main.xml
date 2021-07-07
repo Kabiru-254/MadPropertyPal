@@ -4,8 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary"
     tools:context=".MainActivity">
 
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/property_bg"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MadPropertyPal"
+            android:fontFamily="casual"
+            android:textSize="25sp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:padding="10dp"
+            android:background="@color/white"
+            />
+
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/mad_property_pal_logo"
+            />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:visibility="visible"
+            android:indeterminate="true"
+            android:max="100"
+            android:progress="1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Please wait as we sign you in."
+            android:layout_marginTop="30dp"
+            android:textColor="@color/primaryDark"
+            android:fontFamily="casual"
+            android:textStyle="italic|bold"
+            android:textSize="18dp"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>
