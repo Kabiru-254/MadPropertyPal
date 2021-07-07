@@ -30,7 +30,7 @@ import com.example.madpropertypal.sqlite.SQLiteHelper;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class UploadFragment extends Fragment {
+public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
 
@@ -102,14 +102,8 @@ public class UploadFragment extends Fragment {
         descriptionTET.getEditText().addTextChangedListener(textWatcher);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                checkRequiredFieldsForEmptyValues();
-
-            }
-        });
+        checkRequiredFieldsForEmptyValues();
+        button.setOnClickListener(this::onClick);
 
 
 
@@ -147,70 +141,17 @@ public class UploadFragment extends Fragment {
         amenities = amenitiesTET.getEditText().getText().toString();
 
 
-        if (propertyName.isEmpty())
-        {
-            button.setEnabled(false);
-            propertyNameTET.requestFocus();
-            propertyNameTET.setError("Required!");
-        }
-        else if (propertyType.isEmpty())
-        {
-            button.setEnabled(false);
-            propertyTypeTET.requestFocus();
-            propertyTypeTET.setError("Required!");
-        }
-        else if (leaseType.isEmpty())
-        {
-            button.setEnabled(false);
-            leaseTypeTET.requestFocus();
-            leaseTypeTET.setError("Required!");
-        }
-        else if (location.isEmpty())
-        {
-            button.setEnabled(false);
-            locationTET.requestFocus();
-            locationTET.setError("Required!");
-        }
-        else if (noOfBedrooms.isEmpty())
-        {
-            button.setEnabled(false);
-            noOfBedroomsTET.requestFocus();
-            noOfBedroomsTET.setError("Required!");
-        }
-        else if (noOfBathrooms.isEmpty())
-        {
-            button.setEnabled(false);
-            noOfBathroomsTET.requestFocus();
-            noOfBathroomsTET.setError("Required!");
-        }
-        else if (size.isEmpty())
-        {
-            button.setEnabled(false);
-            sizeTET.requestFocus();
-            sizeTET.setError("Required!");
-        }
-        else if (price.isEmpty())
-        {
-            button.setEnabled(false);
-            priceTET.requestFocus();
-            priceTET.setError("Required!");
-        }else{
+        if (propertyName.isEmpty() || propertyType.isEmpty() || leaseType.isEmpty()
+                || location.isEmpty() || noOfBedrooms.isEmpty() || noOfBathrooms.isEmpty() || size.isEmpty()
+                || price.isEmpty()) {
 
 
-            if (description.isEmpty()){
-                description = " ";
-            }
+            button.setEnabled(false);
 
-            if (amenities.isEmpty()){
-                amenities = " ";
-            }
-
+        }else {
 
             button.setEnabled(true);
-            Toast.makeText(getContext(), "button clicked", Toast.LENGTH_SHORT).show();
-            openDialog(R.layout.dialog_layout);
         }
-
 
     }
 
@@ -223,14 +164,70 @@ public class UploadFragment extends Fragment {
 
 
     //what happens when button is clicked
-   /* @Override
+    @Override
     public void onClick(View v) {
 
 
         if (v == button){
 
-            Toast.makeText(getContext(), "button clicked", Toast.LENGTH_SHORT).show();
-            openDialog(R.layout.dialog_layout);
+
+            if (propertyName.isEmpty()) {
+
+                propertyNameTET.requestFocus();
+                propertyNameTET.setError("Required!");
+
+            } else if (propertyType.isEmpty()) {
+
+                propertyTypeTET.requestFocus();
+                propertyTypeTET.setError("Required!");
+
+            } else if (leaseType.isEmpty()) {
+
+                leaseTypeTET.requestFocus();
+                leaseTypeTET.setError("Required!");
+
+            } else if (location.isEmpty()) {
+
+                locationTET.requestFocus();
+                locationTET.setError("Required!");
+
+            } else if (noOfBedrooms.isEmpty()) {
+
+                noOfBedroomsTET.requestFocus();
+                noOfBedroomsTET.setError("Required!");
+
+            } else if (noOfBathrooms.isEmpty()) {
+
+                noOfBathroomsTET.requestFocus();
+                noOfBathroomsTET.setError("Required!");
+
+            } else if (size.isEmpty()) {
+
+                sizeTET.requestFocus();
+                sizeTET.setError("Required!");
+
+            } else if (price.isEmpty()) {
+
+                priceTET.requestFocus();
+                priceTET.setError("Required!");
+
+            }else {
+
+                if (description.isEmpty()){
+
+                    description = " ";
+
+                }
+
+                if (amenities.isEmpty()){
+
+                    amenities = " ";
+
+                }
+
+                openDialog(R.layout.dialog_layout);
+
+            }
 
         }else if (v == cancelBT){
 
@@ -248,7 +245,7 @@ public class UploadFragment extends Fragment {
             uploadHouse();
 
         }
-    }*/
+    }
 
 
 
