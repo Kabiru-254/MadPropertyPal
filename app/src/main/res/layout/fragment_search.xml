@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/primaryDark"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".ui.search.SearchFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,18 +18,21 @@
         android:layout_margin="5dp">
 
         <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:inputType="text"
             app:queryHint="Type property Name"
             android:background="@color/primaryLight"
             android:layout_margin="20dp"
             />
 
         <Button
+            android:id="@+id/searchBT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search"
+            android:text="@string/search"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/round_btn"
             android:textColor="@color/white"
@@ -37,6 +40,12 @@
             android:layout_marginTop="20dp"
             />
 
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerView1"/>
 
     </LinearLayout>
 

@@ -266,10 +266,12 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
         propertyModel = new PropertyModel(-1, propertyName, propertyType,leaseType,
                 location, amenities, description, bedrooms, bathrooms,propertySize, askingPrice );
+
         boolean addedHouse = sqLiteHelpar.addHouses(propertyModel);
 
 
         if (addedHouse) {
+
 
             dialog.dismiss();
             startActivity(new Intent(getContext(), HomeActivity.class));
@@ -298,7 +300,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
     //adding the confirmation dialog
     Dialog dialog;
     TextView nameTV, typeTV, leaseTypeTV, locationTV, localAmenitiesTV,
-            descriptionTV, bathroomNumber, bedroomNumber,sizeTV;
+            descriptionTV, bathroomNumber, bedroomNumber,sizeTV,askingpTV;
     Button confirmBT, cancelBT;
     private ProgressBar progressBar;
     LinearLayout linearLayout;
@@ -317,7 +319,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
         //selection buttons onclick
         nameTV =  inflator.findViewById(R.id.nameTV);
-        typeTV =  inflator.findViewById(R.id.nameTV);
+        typeTV =  inflator.findViewById(R.id.typeTV);
         leaseTypeTV =  inflator.findViewById(R.id.leaseType);
         locationTV =  inflator.findViewById(R.id.locationtv);
         localAmenitiesTV =  inflator.findViewById(R.id.localAmenitiesTV);
@@ -325,6 +327,8 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         bathroomNumber =  inflator.findViewById(R.id.bathroomNumber);
         bedroomNumber =  inflator.findViewById(R.id.bedroomNumber);
         sizeTV =  inflator.findViewById(R.id.size);
+        askingpTV =  inflator.findViewById(R.id.askingPriceTV);
+
 
 
 
@@ -338,34 +342,19 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
         bathroomNumber.setText(noOfBathrooms);
         bedroomNumber.setText(noOfBedrooms);
         sizeTV.setText(size);
+        askingpTV.setText(price);
 
 
         cancelBT = inflator.findViewById(R.id.cancelBT);
-        cancelBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "Make your changes then submit again", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-
-            }
-        });
+        cancelBT.setOnClickListener(this::onClick);
         confirmBT = inflator.findViewById(R.id.confirmBT);
-        confirmBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                linearLayout.setVisibility(View.GONE);
-                progressBar.setVisibility(View.VISIBLE);
-                Toast.makeText(getContext(), "Confirmed", Toast.LENGTH_SHORT).show();
-                uploadHouse();
-
-            }
-        });
-
+        confirmBT.setOnClickListener(this::onClick);
         progressBar = inflator.findViewById(R.id.uploadProgress);
         linearLayout = inflator.findViewById(R.id.linearLayout);
-
-
         dialog.show();
+
+
+
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         layoutParams.copyFrom(dialog.getWindow().getAttributes());
         layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;

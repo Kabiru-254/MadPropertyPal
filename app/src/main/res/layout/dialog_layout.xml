@@ -277,7 +277,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/asking_price"
         android:textSize="20sp"
-        android:id="@+id/askingPrice"
+        android:id="@+id/askingPriceTV"
         />
 
 

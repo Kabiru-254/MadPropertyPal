@@ -22,5 +22,6 @@
     <string name="local_amenities_">Local Amenities</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+    <string name="search">Search</string>
 
 </resources>
