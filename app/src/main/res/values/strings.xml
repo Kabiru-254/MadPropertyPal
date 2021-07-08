@@ -23,5 +23,9 @@
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="search">Search</string>
+    <string name="details_of_selected_property">Details of Selected Property</string>
+    <string name="lease_type">Lease Type</string>
+    <string name="property_type">Property Type</string>
+    
 
 </resources>

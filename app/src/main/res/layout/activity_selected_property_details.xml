@@ -17,7 +17,7 @@
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_gravity="center_horizontal"
-        android:text="Details of Selected Property"
+        android:text="@string/details_of_selected_property"
         android:textColor="@color/white"
         android:textSize="22sp"
         />
@@ -46,7 +46,7 @@
         android:padding="10dp"
         android:fontFamily="@font/antic"
         android:textSize="22sp"
-        android:hint="Property Name"
+        android:hint="@string/property_name"
         android:textColor="@color/black"
         />
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -60,7 +60,7 @@
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
-            android:hint="Property Type"
+            android:hint="@string/property_type"
             android:textColor="@color/black"
             />
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -74,7 +74,7 @@
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
-            android:hint="Lease Type"
+            android:hint="@string/lease_type"
             android:textColor="@color/black"
             />
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
