@@ -1,6 +1,8 @@
 package com.example.madpropertypal;
 
-public class PropertyModel {
+import java.io.Serializable;
+
+public class PropertyModel implements Serializable {
 
     //This class defines the basic structure of a property item and the details to be stored on the db
 

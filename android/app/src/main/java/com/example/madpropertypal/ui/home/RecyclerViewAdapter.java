@@ -1,6 +1,7 @@
 package com.example.madpropertypal.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madpropertypal.PropertyModel;
 import com.example.madpropertypal.R;
+import com.example.madpropertypal.SelectedPropertyDetails;
 
 import java.util.List;
 
@@ -26,6 +28,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.context=context;
 
     }
+
+
+
+
+
 
 
 
@@ -57,10 +64,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                //Intent viewMoreDetails=new Intent(context, HouseDetailsActivity.class);
-              //  viewMoreDetails.putExtra("houseTitle",myPropertyItems.getHouseTitle());
-                //holder.relativeLayout.getContext().startActivity(viewMoreDetails);
+                Intent intent = new Intent(context, SelectedPropertyDetails.class);
+                intent.putExtra("selectedProperty", myPropertyItems);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
+
 
     }
 

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/mad_property_pal_logo_white"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".selectedPropertyDetails"></activity>
+        <activity android:name=".SelectedPropertyDetails"></activity>
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" >

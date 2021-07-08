@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/primaryDark"
-    tools:context=".selectedPropertyDetails">
+    tools:context=".SelectedPropertyDetails">
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
 
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="5dp"
@@ -48,9 +48,14 @@
         android:textSize="22sp"
         android:hint="@string/property_name"
         android:textColor="@color/black"
+            android:id="@+id/nameCTV"
         />
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
+            android:clickable="false"
+            android:enabled="false"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginStart="5dp"
@@ -62,7 +67,12 @@
             android:textSize="22sp"
             android:hint="@string/property_type"
             android:textColor="@color/black"
+            android:id="@+id/typeCTV"
             />
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +86,12 @@
             android:textSize="22sp"
             android:hint="@string/lease_type"
             android:textColor="@color/black"
+            android:id="@+id/leaseCTV"
             />
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,7 +105,13 @@
             android:textSize="22sp"
             android:hint="Location of the Property"
             android:textColor="@color/black"
+            android:id="@+id/locationCTV"
             />
+
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,7 +125,14 @@
             android:textSize="22sp"
             android:hint="Number of Bedrooms"
             android:textColor="@color/black"
+            android:id="@+id/bedroomsCTV"
+
             />
+
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,7 +146,14 @@
             android:textSize="22sp"
             android:hint="Number of Bathrooms"
             android:textColor="@color/black"
+            android:id="@+id/bathroomsCTV"
+
             />
+
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,7 +167,13 @@
             android:textSize="22sp"
             android:hint="Size in Square Metres"
             android:textColor="@color/black"
+            android:id="@+id/sizeCTV"
+
             />
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -146,7 +187,13 @@
             android:textSize="22sp"
             android:hint="Asking price"
             android:textColor="@color/black"
+            android:id="@+id/askingPriceCTV"
+
             />
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,7 +207,14 @@
             android:textSize="22sp"
             android:hint="Local Amenities"
             android:textColor="@color/black"
+            android:id="@+id/amenitiesCTV"
+
             />
+
+
+
+
+
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -174,7 +228,12 @@
             android:textSize="22sp"
             android:hint="Description"
             android:textColor="@color/black"
+            android:id="@+id/descriptionCTV"
+
             />
+
+
+
 
 
         <com.google.android.material.button.MaterialButton
