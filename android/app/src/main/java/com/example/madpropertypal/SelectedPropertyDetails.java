@@ -22,22 +22,28 @@ public class SelectedPropertyDetails extends AppCompatActivity {
 
         init();
 
-        Intent intent = new Intent();
+        Intent intent = getIntent();
         propertyModel = (PropertyModel) intent.getSerializableExtra("selectedProperty");
 
         nameET.setText(propertyModel.getPropertyName());
         typeET.setText(propertyModel.getPropertyType());
         leaseET.setText(propertyModel.getLeaseType());
         locationET.setText(propertyModel.getLocation());
-        bedroomsCTV.setText(propertyModel.getBedroomNumber());
-        bathroomsCTV.setText(propertyModel.getBathroomNumber());
-        sizeCTV.setText(propertyModel.getSize());
-        priceCTV.setText(propertyModel.getAskingPrice());
         amenitiesCTV.setText(propertyModel.getLocalAmenities());
         descriptionCTV.setText(propertyModel.getDescription());
 
-        
 
+        //integers to string
+        bedroomsCTV.setText(String.valueOf(propertyModel.getBedroomNumber()));
+        bathroomsCTV.setText(String.valueOf(propertyModel.getBathroomNumber()));
+        sizeCTV.setText(String.valueOf(propertyModel.getSize()));
+        priceCTV.setText(String.valueOf(propertyModel.getAskingPrice()));
+
+
+
+
+
+        //ingredients = ingredients.replaceAll(",","\n"+ "\u25CF ");
 
 
     }
@@ -54,8 +60,5 @@ public class SelectedPropertyDetails extends AppCompatActivity {
         priceCTV = findViewById(R.id.askingPriceCTV);
         amenitiesCTV = findViewById(R.id.amenitiesCTV);
         descriptionCTV = findViewById(R.id.descriptionCTV);
-
-
-
     }
 }

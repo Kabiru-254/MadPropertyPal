@@ -12,7 +12,9 @@ public class PropertyModel implements Serializable {
 
 
     //empty constructor;
-    public  PropertyModel(){}
+    public  PropertyModel(){
+
+    }
 
 
     public PropertyModel( int id, String propertyName, String propertyType,
@@ -36,6 +38,9 @@ public class PropertyModel implements Serializable {
 
         return id;
     }
+
+
+
 
     public void setId(int id) {
         this.id = id;

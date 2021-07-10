@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,13 +50,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull final myViewHolder holder, int position) {
 
-        final PropertyModel myPropertyItems = AvailableHouses.get(position);
+        PropertyModel myPropertyItems = AvailableHouses.get(position);
 
         String name = myPropertyItems.getPropertyName();
         String location = myPropertyItems.getLocation();
         int price = myPropertyItems.getAskingPrice();
-
-
 
 
         holder.nameTV.setText(name);
