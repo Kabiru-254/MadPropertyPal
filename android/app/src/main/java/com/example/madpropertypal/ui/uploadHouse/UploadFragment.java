@@ -18,13 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.madpropertypal.HomeActivity;
-import com.example.madpropertypal.PropertyModel;
+import com.example.madpropertypal.models.PropertyModel;
 import com.example.madpropertypal.R;
 import com.example.madpropertypal.sqlite.SQLiteHelper;
 import com.google.android.material.button.MaterialButton;

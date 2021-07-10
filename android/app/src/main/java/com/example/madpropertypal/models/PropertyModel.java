@@ -1,4 +1,4 @@
-package com.example.madpropertypal;
+package com.example.madpropertypal.models;
 
 import java.io.Serializable;
 

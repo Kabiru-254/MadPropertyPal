@@ -13,16 +13,14 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.madpropertypal.models.OfferModel;
 import com.example.madpropertypal.sqlite.OffersSQLiteHelpar;
-import com.example.madpropertypal.sqlite.SQLiteHelper;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.datepicker.MaterialTextInputPicker;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 
 import java.text.SimpleDateFormat;
-import java.time.Year;
 import java.util.Calendar;
 import java.util.Locale;
 

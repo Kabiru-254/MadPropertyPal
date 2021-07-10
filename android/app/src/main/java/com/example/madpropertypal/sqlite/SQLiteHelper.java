@@ -8,8 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.example.madpropertypal.OfferModel;
-import com.example.madpropertypal.PropertyModel;
+import com.example.madpropertypal.models.PropertyModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,9 +56,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + PROPERTY_SIZE + " INT, "
                 + ASKING_PRICE + " INT);";
 
-
-
-
         db.execSQL(createTableStatement);
 
 
@@ -75,7 +71,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-
 
         cv.put(PROPERTY_NAME, propertyModel.getPropertyName());
         cv.put(PROPERTY_TYPE, propertyModel.getPropertyType());
@@ -101,6 +96,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
             db.close();
             return true;
+
         }
     }
 
@@ -144,10 +140,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         }
 
-
         cursor.close();
         db.close();
+
         return propertyModelList;
+
     }
 
 
@@ -165,7 +162,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         String searchHouse = "SELECT * FROM " +HOUSES_TABLE + " WHERE " +PROPERTY_NAME+ " LIKE '%" + searchedString + "%'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(searchHouse,null);
-
 
 
         if (cursor.moveToFirst()){
@@ -196,11 +192,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         }
 
-
         cursor.close();
         db.close();
         return propertyList;
+
     }
+
+
+
+
+
 
 
 
@@ -224,10 +225,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
 
 
-        @Override
+
+
+    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL("DROP TABLE IF EXISTS " + HOUSES_TABLE);
         onCreate(db);
+
     }
 }

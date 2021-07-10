@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.example.madpropertypal.OfferModel;
+import com.example.madpropertypal.models.OfferModel;
 
 public class OffersSQLiteHelpar extends SQLiteOpenHelper {
 

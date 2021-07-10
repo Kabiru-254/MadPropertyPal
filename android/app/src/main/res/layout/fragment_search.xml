@@ -17,6 +17,14 @@
         android:orientation="vertical"
         android:layout_margin="5dp">
 
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/advancedSwitch"
+            android:text="Advanced Search"/>
+
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
@@ -28,25 +36,25 @@
             android:layout_margin="20dp"
             />
 
-        <Button
-            android:id="@+id/searchBT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/search"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/round_btn"
-            android:textColor="@color/white"
-            android:padding="5dp"
-            android:layout_marginTop="20dp"
-            android:visibility="gone"
-            />
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/advancedLL"
+            android:layout_margin="20dp">
+
+            
+
+
+        </LinearLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:visibility="gone"
             android:id="@+id/recyclerView1"/>
 
     </LinearLayout>

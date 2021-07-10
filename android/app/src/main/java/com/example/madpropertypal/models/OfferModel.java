@@ -1,9 +1,9 @@
-package com.example.madpropertypal;
+package com.example.madpropertypal.models;
 
 public class OfferModel {
 
     String offerDate, interest, expiryDate, conditions, comments;
-    int offerPrice;
+    int offerPrice,id;
     public OfferModel() {
     }
 
@@ -18,6 +18,25 @@ public class OfferModel {
         this.conditions = conditions;
         this.comments = comments;
 
+    }
+
+
+    public OfferModel(String offerDate, String interest, String expiryDate, String conditions, String comments, int offerPrice, int id) {
+        this.offerDate = offerDate;
+        this.interest = interest;
+        this.expiryDate = expiryDate;
+        this.conditions = conditions;
+        this.comments = comments;
+        this.offerPrice = offerPrice;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getOfferDate() {
