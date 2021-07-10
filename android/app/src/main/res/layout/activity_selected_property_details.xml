@@ -50,7 +50,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
@@ -70,7 +70,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
@@ -89,13 +89,15 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/lease_type"
             android:textColor="@color/black"
             android:id="@+id/leaseCTV"
+            android:clickable="false"
+            android:enabled="false"
             />
 
 
@@ -109,12 +111,14 @@
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/antic"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:textSize="22sp"
             android:hint="@string/location_of_the_property"
             android:textColor="@color/black"
             android:id="@+id/locationCTV"
+            android:clickable="false"
+            android:enabled="false"
             />
 
 
@@ -128,14 +132,15 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/number_of_bedrooms"
             android:textColor="@color/black"
             android:id="@+id/bedroomsCTV"
-
+            android:clickable="false"
+            android:enabled="false"
             />
 
 
@@ -149,14 +154,15 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/number_of_bathrooms"
             android:textColor="@color/black"
             android:id="@+id/bathroomsCTV"
-
+            android:clickable="false"
+            android:enabled="false"
             />
 
 
@@ -170,14 +176,15 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/size_squared_meter"
             android:textColor="@color/black"
             android:id="@+id/sizeCTV"
-
+            android:clickable="false"
+            android:enabled="false"
             />
 
 
@@ -190,14 +197,15 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/asking_price"
             android:textColor="@color/black"
             android:id="@+id/askingPriceCTV"
-
+            android:clickable="false"
+            android:enabled="false"
             />
 
 
@@ -210,11 +218,13 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/local_amenities_"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="2"
             android:textColor="@color/black"
             android:id="@+id/amenitiesCTV"
 
@@ -231,14 +241,17 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:background="@color/primaryLight"
+            android:background="@drawable/back"
             android:padding="10dp"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="3"
             android:fontFamily="@font/antic"
             android:textSize="22sp"
             android:hint="@string/description"
             android:textColor="@color/black"
             android:id="@+id/descriptionCTV"
-
+            android:clickable="false"
+            android:enabled="false"
             />
 
 

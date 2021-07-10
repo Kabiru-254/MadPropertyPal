@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -161,6 +160,8 @@ public class OfferActivity extends AppCompatActivity implements View.OnClickList
     OfferModel offerModel;
     private void submitOffer() {
 
+
+        comments = commentsTIL.getEditText().getText().toString();
         //empty string for price causes a crash
         if (price.isEmpty()){
 
@@ -201,7 +202,7 @@ public class OfferActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(this,HomeActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-            Toast.makeText(this, "Property Added Successfully " , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Offer Added Successfully " , Toast.LENGTH_SHORT).show();
 
         }else{
 
