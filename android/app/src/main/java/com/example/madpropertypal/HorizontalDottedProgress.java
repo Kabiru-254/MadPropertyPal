@@ -24,7 +24,7 @@ public class HorizontalDottedProgress extends View {
     private int  mDotPosition;
 
     //specify how many dots you need in a progressbar
-    private int mDotAmount = 10;
+    private int mDotAmount = 4;
 
     public HorizontalDottedProgress(Context context) {
         super(context);

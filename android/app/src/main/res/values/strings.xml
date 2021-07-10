@@ -26,6 +26,7 @@
     <string name="details_of_selected_property">Details of Selected Property</string>
     <string name="lease_type">Lease Type</string>
     <string name="property_type">Property Type</string>
+    <string name="make_an_offer">Make an Offer</string>
 
 
 </resources>

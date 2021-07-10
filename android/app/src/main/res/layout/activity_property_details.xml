@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/primaryDark"
-    tools:context=".PropertyDetails">
+    tools:context=".ui.uploadHouse.UploadFragment">
 
 
     <LinearLayout

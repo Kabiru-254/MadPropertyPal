@@ -130,7 +130,7 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
         propertyName = propertyNameTET.getEditText().getText().toString();
-        propertyType = propertyNameTET.getEditText().getText().toString();
+        propertyType = propertyTypeTET.getEditText().getText().toString();
         leaseType = leaseTypeTET.getEditText().getText().toString();
         location = locationTET.getEditText().getText().toString();
         noOfBedrooms = noOfBedroomsTET.getEditText().getText().toString();
@@ -274,13 +274,16 @@ public class UploadFragment extends Fragment implements View.OnClickListener {
 
 
             dialog.dismiss();
-            startActivity(new Intent(getContext(), HomeActivity.class));
-            Toast.makeText(getContext(), "Success " + addedHouse, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getContext(),HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            Toast.makeText(getContext(), "Property Added Successfully " , Toast.LENGTH_SHORT).show();
 
         }else{
 
             dialog.dismiss();
             Toast.makeText(getContext(), "Something Went Wrong. Try Again", Toast.LENGTH_SHORT).show();
+
         }
 
     }

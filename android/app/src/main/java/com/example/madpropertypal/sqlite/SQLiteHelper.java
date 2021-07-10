@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.madpropertypal.OfferModel;
 import com.example.madpropertypal.PropertyModel;
 
 import java.util.ArrayList;
@@ -28,8 +29,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String BATHROOM_NUMBERS = "BATHROOM_NUMBERS";
     public static final String PROPERTY_SIZE = "PROPERTY_SIZE";
     public static final String ASKING_PRICE = "ASKING_PRICE";
-
-
 
 
 
@@ -59,8 +58,14 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + ASKING_PRICE + " INT);";
 
 
+
+
         db.execSQL(createTableStatement);
+
+
     }
+
+
 
 
 
@@ -195,6 +200,26 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return propertyList;
+    }
+
+
+
+    public Boolean removeProperty(PropertyModel propertyModel){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String deleteQuery = "DELETE FROM " +HOUSES_TABLE+ " WHERE " +ID+ " = " + propertyModel.getId();
+
+        Cursor cursor = db.rawQuery(deleteQuery, null);
+        if (cursor.moveToFirst()){
+
+            return true;
+
+        }else {
+
+            return false;
+
+        }
+
     }
 
 
