@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.madpropertypal.models.PropertyModel;
 import com.google.android.material.button.MaterialButton;
@@ -12,13 +13,12 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 
 public class SelectedPropertyDetails extends AppCompatActivity implements View.OnClickListener {
 
-
-
     private PropertyModel propertyModel;
     private MaterialAutoCompleteTextView nameET, typeET, leaseET, locationET,
             bedroomsCTV, bathroomsCTV, sizeCTV, priceCTV, amenitiesCTV, descriptionCTV;
-
     private String amenities;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,6 @@ public class SelectedPropertyDetails extends AppCompatActivity implements View.O
 
         Intent intent = getIntent();
         propertyModel = (PropertyModel) intent.getSerializableExtra("selectedProperty");
-
         amenities = propertyModel.getLocalAmenities();
 
         nameET.setText(propertyModel.getPropertyName());
@@ -43,8 +42,6 @@ public class SelectedPropertyDetails extends AppCompatActivity implements View.O
         bathroomsCTV.setText(String.valueOf(propertyModel.getBathroomNumber()));
         sizeCTV.setText(String.valueOf(propertyModel.getSize()));
         priceCTV.setText(String.valueOf(propertyModel.getAskingPrice()));
-
-
 
 
 
@@ -71,6 +68,7 @@ public class SelectedPropertyDetails extends AppCompatActivity implements View.O
 
 
     private MaterialButton offerBT;
+    private TextView offersTV;
     private void init() {
 
         nameET = findViewById(R.id.nameCTV);
@@ -84,6 +82,8 @@ public class SelectedPropertyDetails extends AppCompatActivity implements View.O
         amenitiesCTV = findViewById(R.id.amenitiesCTV);
         descriptionCTV = findViewById(R.id.descriptionCTV);
 
+        offersTV = findViewById(R.id.offersTV);
+        offersTV.setOnClickListener(this::onClick);
 
         offerBT = findViewById(R.id.offerBT);
         offerBT.setOnClickListener(this);
@@ -95,7 +95,15 @@ public class SelectedPropertyDetails extends AppCompatActivity implements View.O
 
         if (v == offerBT){
 
-            startActivity(new Intent(getBaseContext(),OfferActivity.class));
+            Intent intent = new Intent(getBaseContext(),OfferActivity.class);
+            intent.putExtra("id1", propertyModel.getId());
+            startActivity(intent);
+
+        }else if (v == offersTV){
+
+            Intent intent = new Intent(getBaseContext(), SelectedHouseOffersActivity.class);
+            intent.putExtra("id", propertyModel.getId());
+            startActivity(intent);
 
         }
     }

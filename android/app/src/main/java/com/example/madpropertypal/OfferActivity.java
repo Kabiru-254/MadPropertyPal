@@ -189,8 +189,9 @@ public class OfferActivity extends AppCompatActivity implements View.OnClickList
         }
 
 
-        OffersSQLiteHelpar sqLiteHelpar = new OffersSQLiteHelpar(getBaseContext(), "OFFERS_DB",1);
-        offerModel = new OfferModel(dateOfOffer, interest, offerPrice, expiry,  conditions, comments);
+        OffersSQLiteHelpar sqLiteHelpar = new OffersSQLiteHelpar(getBaseContext(), "OFFERS_DB");
+        offerModel = new OfferModel(dateOfOffer, interest, offerPrice,
+               getIntent().getIntExtra("id1",0), expiry,  conditions, comments );
 
         Boolean submitOffer = sqLiteHelpar.makeOffer(offerModel);
 

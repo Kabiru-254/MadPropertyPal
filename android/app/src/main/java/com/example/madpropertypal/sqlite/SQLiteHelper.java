@@ -152,9 +152,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
 
 
-
-
-
     public List<PropertyModel> searchHouses(String searchedString) {
 
         List<PropertyModel> propertyList = new ArrayList<>();
@@ -186,6 +183,57 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 propertyList.add(model);
 
             }while (cursor.moveToNext());
+
+
+        }else{
+
+
+        }
+
+        cursor.close();
+        db.close();
+        return propertyList;
+
+    }
+
+
+
+
+
+    public List<PropertyModel> advancedSearchHouses(String searchedString, int searchedBedrooms, String searchedType) {
+
+        List<PropertyModel> propertyList = new ArrayList<>();
+
+        String searchHouse = "SELECT * FROM " +HOUSES_TABLE + " WHERE " + LOCATION + " LIKE '%" + searchedString + "%'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(searchHouse,null);
+
+
+        if (cursor.moveToFirst()){
+            do {
+
+                int id = cursor.getInt(0);
+                String propertyName = cursor.getString(1);
+                String type = cursor.getString(2);
+                String lease = cursor.getString(3);
+                String location = cursor.getString(4);
+                String amenities = cursor.getString(5);
+                String description = cursor.getString(6);
+                int bedrooms = cursor.getInt(7);
+                int bathrooms = cursor.getInt(8);
+                int size = cursor.getInt(9);
+                int price = cursor.getInt(10);
+
+                if (bedrooms == searchedBedrooms && type.equals(searchedType)) {
+
+                    PropertyModel model = new PropertyModel(id, propertyName, type, lease, location, amenities,
+                            description, bedrooms, bathrooms, size, price);
+                    propertyList.add(model);
+
+                }
+
+            }while (cursor.moveToNext());
+
 
         }else{
 

@@ -22,4 +22,10 @@
         android:name="com.example.madpropertypal.ui.search.SearchFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_props"
+        android:name="com.example.madpropertypal.ui.myproperties.PropertiesFragment"
+        android:label="My Properties"
+        tools:layout="@layout/properties_fragment" />
 </navigation>

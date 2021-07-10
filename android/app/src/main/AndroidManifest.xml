@@ -9,20 +9,16 @@
         android:roundIcon="@mipmap/mad_property_pal_logo_white"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
-        <activity android:name=".SelectedPropertyDetails"></activity>
-        <activity android:name=".OfferActivity"></activity>
+        <activity android:name=".SelectedHouseOffersActivity"></activity>
+        <activity android:name=".SelectedPropertyDetails" />
+        <activity android:name=".OfferActivity" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home" >
-
-
+            android:label="@string/title_activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,13 +3,14 @@ package com.example.madpropertypal.models;
 public class OfferModel {
 
     String offerDate, interest, expiryDate, conditions, comments;
-    int offerPrice,id;
+    int offerPrice, id, property_id;
     public OfferModel() {
     }
 
 
-    public OfferModel(String offerDate, String interest, int offerPrice,
+    public OfferModel(String offerDate, String interest, int offerPrice, int property_id,
                       String expiryDate, String conditions, String comments) {
+
 
         this.offerDate = offerDate;
         this.interest = interest;
@@ -17,11 +18,14 @@ public class OfferModel {
         this.expiryDate = expiryDate;
         this.conditions = conditions;
         this.comments = comments;
+        this.property_id = property_id;
 
     }
 
 
-    public OfferModel(String offerDate, String interest, String expiryDate, String conditions, String comments, int offerPrice, int id) {
+    public OfferModel(String offerDate, String interest, String expiryDate, String conditions,
+                      String comments, int offerPrice, int id, int property_id) {
+
         this.offerDate = offerDate;
         this.interest = interest;
         this.expiryDate = expiryDate;
@@ -29,6 +33,16 @@ public class OfferModel {
         this.comments = comments;
         this.offerPrice = offerPrice;
         this.id = id;
+        this.property_id = property_id;
+    }
+
+
+    public int getProperty_id() {
+        return property_id;
+    }
+
+    public void setProperty_id(int property_id) {
+        this.property_id = property_id;
     }
 
     public int getId() {

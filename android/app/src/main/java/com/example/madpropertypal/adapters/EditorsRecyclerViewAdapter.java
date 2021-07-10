@@ -1,4 +1,4 @@
-package com.example.madpropertypal.ui.home;
+package com.example.madpropertypal.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,23 +6,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.madpropertypal.models.PropertyModel;
+import com.example.madpropertypal.HomeActivity;
 import com.example.madpropertypal.R;
 import com.example.madpropertypal.SelectedPropertyDetails;
+import com.example.madpropertypal.models.PropertyModel;
+import com.example.madpropertypal.sqlite.SQLiteHelper;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.myViewHolder>{
+public class EditorsRecyclerViewAdapter extends RecyclerView.Adapter<EditorsRecyclerViewAdapter.myViewHolder>{
 
     Context context;
     List<PropertyModel> AvailableHouses;
 
 
-    public RecyclerViewAdapter(Context context,List< PropertyModel> TempList){
+    public EditorsRecyclerViewAdapter(Context context, List< PropertyModel> TempList){
 
         this.AvailableHouses=TempList;
         this.context=context;
@@ -38,9 +41,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.houses_recycler_layout, parent, false);
-        RecyclerViewAdapter.myViewHolder viewHolder =  new RecyclerViewAdapter.myViewHolder(view);
+    public EditorsRecyclerViewAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.editor_houses_recycler_layout, parent, false);
+        EditorsRecyclerViewAdapter.myViewHolder viewHolder =  new EditorsRecyclerViewAdapter.myViewHolder(view);
         return viewHolder;
     }
 
@@ -60,6 +63,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.locationTV.setText(location);
         holder.priceTV.setText(String.valueOf(price));
 
+        holder.removeTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SQLiteHelper sqLiteHelpar = new SQLiteHelper(context, "HOUSES_AVAILABLE");
+                Boolean removedItem = sqLiteHelpar.removeProperty(myPropertyItems);
+
+                if (removedItem){
+
+                    Toast.makeText(context, "something Went wrong. Try Again", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    Toast.makeText(context, "Item Deleted", Toast.LENGTH_SHORT).show();
+                    holder.itemView.getContext().startActivity(new Intent(context, HomeActivity.class));
+
+
+                }
+            }
+        });
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +114,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class myViewHolder extends RecyclerView.ViewHolder{
 
-        TextView nameTV,priceTV,locationTV;
+        TextView nameTV,priceTV,locationTV, editTV, removeTV;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -99,6 +122,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             nameTV = itemView.findViewById(R.id.recyclerNameTV);
             priceTV = itemView.findViewById(R.id.recyclerpriceTV);
             locationTV = itemView.findViewById(R.id.recyclerLocationTV);
+            editTV = itemView.findViewById(R.id.recyclereditTV);
+            removeTV = itemView.findViewById(R.id.recyclerRemoveTV);
 
         }
     }
