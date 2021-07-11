@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.example.madpropertypal.adapters.OffersRecyclerAdapter;
@@ -61,6 +62,13 @@ public class SelectedHouseOffersActivity extends AppCompatActivity {
             }else {
 
                 Toast.makeText(this, "No Offers made on this house yet", Toast.LENGTH_SHORT).show();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        SelectedHouseOffersActivity.this.finish();
+                    }
+                },3000);
 
 
             }

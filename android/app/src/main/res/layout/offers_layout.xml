@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="20dp">
+    android:layout_margin="10dp"
+    android:background="@color/primaryLight"
+    android:outlineAmbientShadowColor="@color/lookingGood"
+    android:padding="7dp">
 
 
     <TextView
@@ -12,33 +15,36 @@
         android:layout_height="wrap_content"
         android:id="@+id/interestTV"
         android:hint="Interest"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:layout_margin="5dp"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"/>
 
     <TextView
         android:id="@+id/amountTV"
-        android:layout_width="164dp"
+        android:layout_width="match_parent"
+        android:padding="7dp"
+        android:layout_margin="5dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:background="@color/white"
         android:hint="Offer Amount"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/expiryTV"
-        android:layout_width="191dp"
+        android:layout_width="match_parent"
+        android:padding="7dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="-26sp"
-        android:layout_marginEnd="20dp"
+        android:layout_gravity="start"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:hint="Expiry"
         android:textSize="20sp"

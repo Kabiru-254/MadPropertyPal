@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:background="@color/primaryLight"
+    android:layout_height="match_parent">
 
 
     <TextView
@@ -14,6 +15,9 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:gravity="center"
+        android:fontFamily="casual"
+        android:textColor="@color/black"
+        android:padding="5dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"/>
@@ -23,7 +27,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/viewDateTV"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -37,6 +41,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:background="@drawable/back"
+            android:textColor="@color/black"
+            android:fontFamily="@font/antic"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,13 +51,14 @@
 
 
     <RadioGroup
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/interestRG"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:tag="Interest"
         android:orientation="horizontal"
+        android:background="@drawable/back"
+        android:padding="5dp"
         >
 
         <RadioButton
@@ -89,6 +97,7 @@
         android:id="@+id/offerPriceTIL"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/back"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Offer Price"
         >
@@ -97,6 +106,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:textColor="@color/black"
+            android:fontFamily="@font/antic"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -114,6 +125,8 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/back"
         android:hint="Offer Expiry Date"
+        android:textColor="@color/black"
+        android:fontFamily="@font/antic"
         >
 
     </com.google.android.material.textview.MaterialTextView>
@@ -129,6 +142,8 @@
         android:id="@+id/offerConditions"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/back"
+        android:textColor="@color/black"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Conditions of Offer"
         >
@@ -138,6 +153,7 @@
             android:layout_height="wrap_content"
             android:inputType="textCapSentences|textMultiLine"
             android:lines="4"
+            android:fontFamily="@font/antic"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -155,6 +171,7 @@
         android:id="@+id/offerComments"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/back"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Your Comments"
         >
@@ -164,6 +181,8 @@
             android:layout_height="wrap_content"
             android:inputType="textCapSentences|textMultiLine"
             android:lines="4"
+            android:fontFamily="@font/antic"
+            android:textColor="@color/black"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -175,7 +194,7 @@
         android:layout_width="167dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:elevation="3dp"
         android:background="@drawable/round_btn"
         android:text="@string/submit" />
