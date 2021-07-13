@@ -22,5 +22,6 @@ public class JSonClass {
 
 
     public static String POST_URL = "http://gillwindallapp1.appspot.com/madservlet";
+    public static String USER_ID = "kp5245j";
 
 }

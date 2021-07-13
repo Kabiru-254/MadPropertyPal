@@ -103,6 +103,44 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
 
 
+    public Boolean updateProperty(PropertyModel propertyModel,int id){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+
+
+        cv.put(PROPERTY_NAME, propertyModel.getPropertyName());
+        cv.put(PROPERTY_TYPE, propertyModel.getPropertyType());
+        cv.put(LEASE_TYPE, propertyModel.getLeaseType());
+        cv.put(LOCATION, propertyModel.getLocation());
+        cv.put(LOCAL_AMENITIES, propertyModel.getLocalAmenities());
+        cv.put(DESCRIPTION, propertyModel.getDescription());
+        cv.put(BEDROOM_NUMBERS, propertyModel.getBedroomNumber());
+        cv.put(BATHROOM_NUMBERS, propertyModel.getBathroomNumber());
+        cv.put(ASKING_PRICE, propertyModel.getAskingPrice());
+        cv.put(PROPERTY_SIZE, propertyModel.getSize());
+
+
+        long update = db.update(HOUSES_TABLE, cv, ID +" = ?", new String[]{String.valueOf(id)});
+
+        if (update == -1 ){
+
+            db.close();
+            return false;
+
+        }else {
+
+            db.close();
+            return true;
+
+        }
+
+
+
+    }
+
+
 
     public List<PropertyModel> fetchHouses(){
 
@@ -272,6 +310,15 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
 
+
+
+    public void dropTB(){
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + HOUSES_TABLE);
+
+    }
 
 
 

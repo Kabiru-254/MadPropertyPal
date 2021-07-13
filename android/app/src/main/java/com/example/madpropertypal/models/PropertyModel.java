@@ -1,5 +1,7 @@
 package com.example.madpropertypal.models;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class PropertyModel implements Serializable {
@@ -125,5 +127,22 @@ public class PropertyModel implements Serializable {
 
     public void setAskingPrice(int askingPrice) {
         this.askingPrice = askingPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "PropertyModel{" +
+                "propertyName='" + propertyName + '\'' +
+                ", propertyType='" + propertyType + '\'' +
+                ", leaseType='" + leaseType + '\'' +
+                ", location='" + location + '\'' +
+                ", localAmenities='" + localAmenities + '\'' +
+                ", description='" + description + '\'' +
+                ", bedroomNumber=" + bedroomNumber +
+                ", bathroomNumber=" + bathroomNumber +
+                ", size=" + size +
+                ", askingPrice=" + askingPrice +
+                ", id=" + id +
+                '}';
     }
 }

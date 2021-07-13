@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.madpropertypal.EditPropertyActivity;
 import com.example.madpropertypal.HomeActivity;
 import com.example.madpropertypal.R;
 import com.example.madpropertypal.SelectedPropertyDetails;
@@ -46,6 +47,8 @@ public class EditorsRecyclerViewAdapter extends RecyclerView.Adapter<EditorsRecy
         EditorsRecyclerViewAdapter.myViewHolder viewHolder =  new EditorsRecyclerViewAdapter.myViewHolder(view);
         return viewHolder;
     }
+
+
 
 
 
@@ -91,6 +94,21 @@ public class EditorsRecyclerViewAdapter extends RecyclerView.Adapter<EditorsRecy
 
                 Intent intent = new Intent(context, SelectedPropertyDetails.class);
                 intent.putExtra("selectedProperty", myPropertyItems);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
+
+
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, EditPropertyActivity.class);
+                intent.putExtra("EditProperty", myPropertyItems);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 holder.itemView.getContext().startActivity(intent);
 

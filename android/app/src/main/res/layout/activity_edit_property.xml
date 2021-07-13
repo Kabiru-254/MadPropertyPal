@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditPropertyActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Edit Your Property"
+        android:textColor="@color/primary"
+        android:textSize="22sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="50dp"
+        android:background="@drawable/property_bg"
+        >
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/property_name"
+            android:textColor="@color/black"
+            android:id="@+id/nameCTV"
+            android:enabled="true"
+        />
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:enabled="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/property_type"
+            android:textColor="@color/black"
+            android:id="@+id/typeCTV"
+            />
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/lease_type"
+            android:textColor="@color/black"
+            android:id="@+id/leaseCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/antic"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:textSize="22sp"
+            android:hint="@string/location_of_the_property"
+            android:textColor="@color/black"
+            android:id="@+id/locationCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/number_of_bedrooms"
+            android:textColor="@color/black"
+            android:id="@+id/bedroomsCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/number_of_bathrooms"
+            android:textColor="@color/black"
+            android:id="@+id/bathroomsCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/size_squared_meter"
+            android:textColor="@color/black"
+            android:id="@+id/sizeCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/asking_price"
+            android:textColor="@color/black"
+            android:id="@+id/askingPriceCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/local_amenities_"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="2"
+            android:textColor="@color/black"
+            android:id="@+id/amenitiesCTV"
+
+            />
+
+
+
+
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/back"
+            android:padding="10dp"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="3"
+            android:fontFamily="@font/antic"
+            android:textSize="22sp"
+            android:hint="@string/description"
+            android:textColor="@color/black"
+            android:id="@+id/descriptionCTV"
+            android:clickable="true"
+            android:enabled="true"
+            />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editBT"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/round_btn"
+            android:elevation="3dp"
+            android:text="Edit Your Property" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
