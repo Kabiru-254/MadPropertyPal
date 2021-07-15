@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     Button login;
     TextInputLayout emailTIL, passwordTIL;
-    TextView forgotTV;
+    TextView forgotTV, registerTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +40,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         login = findViewById(R.id.btnLogin);
         emailTIL = findViewById(R.id.TILEmailLogin);
         passwordTIL = findViewById(R.id.TILPasswordLogin);
-
+        registerTV = findViewById(R.id.tvRegister);
         forgotTV = findViewById(R.id.tvForgotPassword);
         forgotTV.setOnClickListener(this::onClick);
         login.setOnClickListener(this::onClick);
+        registerTV.setOnClickListener(this::onClick);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -113,6 +114,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                      }
                  });
             }
+        }else if (v == registerTV)
+        {
+            Intent intent = new Intent(LoginActivity.this, Registration.class);
+            startActivity(intent);
         }
     }
 }
