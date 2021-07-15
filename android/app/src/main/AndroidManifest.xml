@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditPropertyActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".Registration" />
+        <activity android:name=".EditPropertyActivity" />
         <activity android:name=".SelectedHouseOffersActivity" />
         <activity android:name=".SelectedPropertyDetails" />
         <activity android:name=".OfferActivity" />
