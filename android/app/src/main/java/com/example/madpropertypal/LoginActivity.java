@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     Button login;
     TextInputLayout emailTIL, passwordTIL;
+    TextView forgotTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         emailTIL = findViewById(R.id.TILEmailLogin);
         passwordTIL = findViewById(R.id.TILPasswordLogin);
 
-
+        forgotTV = findViewById(R.id.tvForgotPassword);
+        forgotTV.setOnClickListener(this::onClick);
         login.setOnClickListener(this::onClick);
 
 
@@ -85,6 +88,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
 
+        }else if (v == forgotTV){
+            passwordTIL.setVisibility(View.GONE);
+            email = emailTIL.getEditText().getText().toString().trim();
+
+            if (email.isEmpty()){
+                Toast.makeText(this, "Required Fields missing", Toast.LENGTH_SHORT).show();
+
+
+            }else {
+
+                 mAuth.sendPasswordResetEmail(email).addOnFailureListener(new OnFailureListener() {
+                     @Override
+                     public void onFailure(@NonNull Exception e) {
+
+                         Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                     }
+                 }).addOnSuccessListener(new OnSuccessListener<Void>() {
+                     @Override
+                     public void onSuccess(Void aVoid) {
+                         passwordTIL.setVisibility(View.VISIBLE);
+                         Toast.makeText(LoginActivity.this, "Email reset link has been sent to your email", Toast.LENGTH_SHORT).show();
+                     }
+                 });
+            }
         }
     }
 }
